@@ -1,0 +1,427 @@
+li:hover {
+    background-color: white;
+}
+
+li:hover svg {
+    color: black;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1, h2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Lora', serif;
+}
+
+ul{
+    padding: 0;
+}
+#title {
+    font-size: 4rem;
+
+}
+.container-fluid {
+
+    background-color: white;
+    padding: 1.5vh;
+    max-height: 75vh;
+    max-width: 90vw;
+
+}
+.btn{
+    line-height: 2!important;
+}
+
+.list-div {
+   height: 75vh;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-right: 1px solid gray;
+    display: flex;
+    flex-flow: column;
+}
+.list-div ul, .recipes{
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.added-recipes{
+    max-height: 70vh;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.recipes {
+   height: 100%;
+}
+
+.title-div{
+    border-bottom: 1px solid gray;
+}
+
+.container-fluid div {
+
+    padding: 1rem 1rem 1rem 1rem;
+
+}
+
+
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.image-container .image-text-add{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.images {
+    width: 100%;
+    height: auto;
+}
+.list-inline-item{
+    padding: 1rem 1rem 1rem 0;
+}
+.list-inline-item:not(:last-child){
+    margin: 0;
+}
+
+.divider {
+    border: 2px solid black;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.list-inline img{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: all 0.5s ease;
+}
+
+.list-inline img:hover{
+    filter: blur(0);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    filter: none;
+    transition: 0.5s ease;
+}
+
+.default-text{
+
+}
+
+#recipe-list-1{
+    display: none;
+}
+#recipe-list-2{
+    display: none;
+}
+#recipe-list-3{
+    display: none;
+}
+.card{
+    padding: 0!important;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.card-image img{
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+.card-body{
+    padding: 0!important;
+    margin: 6px;
+}
+
+.card-row{
+    padding: 0!important;
+}
+
+.input-group {
+    padding-left: 0rem!important;
+}
+#recipes-title{
+    display: inline;
+}
+#add-recipe{
+    display: inline;
+    width: 25%;
+}
+.fa-trash:hover{
+    color: red;
+}
+
+#main-row{
+    max-height: 95vh;
+}
+ #add-list-modal{
+     width: 100vw;
+ }
+ .modal-dialog {
+     max-width: 60vw!important;
+     margin: 1.75rem auto;
+ }
+
+ .added-recipes{
+     max-height: 75vh;
+     padding-right: 0.5rem;
+     margin-top: 0.5rem;
+     display: flex;
+     flex-flow: column;
+     height: 100%;
+ }
+ .add-recipe{
+     margin: 0 0 1rem 0;
+     height: 6vh;
+ }
+a{
+    text-decoration: none;
+}
+.card-title{
+     color: black;
+
+ }
+
+.card-text{
+    color: black;
+}
+
+
+/* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(160, 203, 255, 0.19);
+}
+
+h1, h2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Lora', serif;
+}
+
+ul{
+    padding: 0;
+}
+#title {
+    font-size: 4rem;
+
+}
+.container {
+
+    background-color: white;
+    padding: 1.5vh;
+    max-height: 100vh;
+
+}
+
+.list-div {
+    height: 75vh;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-right: 1px solid gray;
+    display: flex;
+    flex-flow: column;
+}
+.list-div ul, .recipes{
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.btn{
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 42, 0.84);
+    color: white;
+    text-align: center;
+}
+
+.name-btn{
+    width: 70%;
+    text-align: center;
+}
+
+.remove-btn{
+    display: inline;
+    width: 20%;
+}
+.add-btn{
+    display: inline;
+    width: 20%;
+}
+.add-btn:hover{
+    color: #06d729;
+
+}
+
+.btn-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 !important;
+    height: 10%;
+}
+
+
+.added-recipes{
+    max-height: 75vh;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.recipes {
+    height: 100%;
+}
+
+.title-div{
+    border-bottom: 1px solid gray;
+}
+
+.container div {
+
+    padding: 1rem 1rem 1rem 1rem;
+
+}
+
+
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.image-container .image-text-add{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.images {
+    width: 100%;
+    height: auto;
+}
+.list-inline-item{
+    padding: 1rem 1rem 1rem 0;
+}
+.list-inline-item:not(:last-child){
+    margin: 0;
+}
+
+.divider {
+    border: 2px solid black;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.list-inline img{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: all 0.5s ease;
+}
+
+.list-inline img:hover{
+    filter: blur(0);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    filter: none;
+    transition: 0.5s ease;
+}
+
+.default-text{
+
+}
+
+#recipe-list-1{
+    display: none;
+}
+#recipe-list-2{
+    display: none;
+}
+#recipe-list-3{
+    display: none;
+}
+.card{
+    padding: 0!important;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.card-image img{
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+.card-body{
+    padding: 0!important;
+}
+
+.card-row{
+    padding: 0!important;
+}
+
+.input-group {
+    padding-left: 0rem!important;
+}
+#recipes-title{
+    display: inline;
+}
+#add-recipe{
+    display: inline;
+    width: 25%;
+}
+.fa-trash:hover{
+    color: red;
+}
+
+#main-row{
+    max-height: 95vh;
+}
+
+.modal-body{
+    height: 100%;
+}
+
+#add-list-modal{
+    width: 100vw;
+}
+
+.modal-dialog {
+    max-width: 60vw!important;
+    margin: 1.75rem auto;
+}
+
+.add-recipe{
+    margin: 2rem 0;
+    height: 6vh;
+}
+*/
+
+
+
+
+
+

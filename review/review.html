@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../Favorites/js/main.js"></script>
+</head>
+<body>
+<div class="d-flex flex-column flex-shrink-0 bg-dark" style="width:
+      4.5rem;height: 100%;position: fixed;background-color: #f8f9fa;">
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <li>
+            <a href="../index.html" class="nav-link py-3 border-bottom"
+               title=""
+               data-bs-toggle="tooltip" data-bs-placement="right"
+               data-bs-original-title="Orders">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                     height="25" fill="currentColor" class="bi bi-house"
+                     viewBox="0 0 16 16" color="white">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0
+                      0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5
+                      1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0
+                      .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0
+                      0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0
+                      1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                </svg>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../Favorites/favorites.html" class="nav-link py-3 border-bottom "
+               aria-current="page" title="" data-bs-toggle="tooltip"
+               data-bs-placement="right" data-bs-original-title="Favorite">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                     fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" color="white">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523
+                1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357
+                3.452-2.368 5.365-4.542
+                6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28
+                8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824
+                1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1
+                .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="../MealPlanner/MealPlanner.html" class="nav-link py-3
+            border-bottom" title=""
+               data-bs-toggle="tooltip" data-bs-placement="right"
+               data-bs-original-title="Favorite">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                     fill="currentColor" class="bi bi-calendar-check" viewBox="0
+              0 16 16" color="white">
+                    <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0
+                1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5
+                9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1
+                  0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2
+                  2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1
+                  1h12a1 1 0 0 0 1-1V4H1z"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse m-3" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">Recipe App</a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body" style="background-color: lightgray">
+
+                    <input type="text" class="form-control" placeholder="Search for a recipe name" id="recipe-name" onkeyup="search()">
+                    <br>
+                    <div class="input-group mb-3">
+                        <div class="col-12 recipes overflow-auto" id="recipe-list-modal">
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/dosa.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Dosa</h5>
+                                                <p class="card-text">A dosa is a thin, spicy, crispy crêpe-like food
+                                                    made from fermented rice, and it is very popular in restaurants in
+                                                    South India.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b> 5 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white bg-dark" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/samosa.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Samosa</h5>
+                                                <p class="card-text">A samosa is a fried South Asian pastry with a
+                                                    savory filling, including ingredients such as spiced potatoes,
+                                                    onions, and peas. It may take different forms, including triangular,
+                                                    cone, or half-moon shapes.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b> 1 hour</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/brown-rice.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Brown Rice with Ground Turkey</h5>
+                                                <p class="card-text">Brown rice with ground turkey is a californian dish
+                                                    made especially near thanksgiving</p>
+                                                <p class="card-text"><small><b>Cook Time:</b> 30 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/caesar-salad.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Caesar Salad</h5>
+                                                <p class="card-text">The Caesar salad is a traditional salad served in
+                                                    American restaurants, often prepared table side. Some also know it
+                                                    as the "king" of salads.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b> 5 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/pancake.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Pancake</h5>
+                                                <p class="card-text">Pancakes are a type of flatbread prepared from a
+                                                    batter that is baked on a hot griddle or frying pan. They exist in
+                                                    several variations.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b> 15 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/pizza.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Pizza</h5>
+                                                <p class="card-text">Pizza generally consists of a crust covered in
+                                                    sauce, layered with toppings and finally with a layer of cheese on
+                                                    top.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b> 1 hour</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/poutine.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Poutine</h5>
+                                                <p class="card-text">Poutine is common dish throughout the Quebec,
+                                                    Ontario, and Atlantic regions of Canada, made of French fries,
+                                                    cheese curds, and gravy.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b> 20 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/quesadilla.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Quesadilla</h5>
+                                                <p class="card-text">Similar to a sandwich, the amount of ingredients
+                                                    for a quesadilla depends on how many you are serving and how big you
+                                                    want to make it.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b>30 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/pasta.jpeg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Pasta Aglio e Olio</h5>
+                                                <p class="card-text">Traditional Italian pasta dish from Naples. It is a
+                                                    typical dish of Neapolitan cuisine and is widely popular.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b>30 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/tacos.jpeg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Tacos Carnitas</h5>
+                                                <p class="card-text">A dish of Mexican cuisine. Carnitas are made by
+                                                    braising or simmering pork in oil or preferably lard until
+                                                    tender.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b>30 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/chinese-food.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Momos</h5>
+                                                <p class="card-text">Momo is a dish with origins from Tibet. They are
+                                                    bite-size dumplings made with a spoonful of stuffing wrapped in
+                                                    dough. Usually steamed, though they are sometimes fried or
+                                                    steam-fried.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b>30 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../recipe.html" class="text-white" style="text-decoration: none">
+                                <div class="card mb-3 modal-card bg-dark" data-bs-dismiss="modal">
+                                    <div class="row g-0 card-row">
+                                        <div class="col-4 card-image">
+                                            <img src="../images/indian-food.jpg" class="img-fluid rounded-start">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body card-content">
+                                                <h5 class="card-title">Indian Thali</h5>
+                                                <p class="card-text">Contains Naan Bread and a delicious dish from a
+                                                    variety of dishes from Indian Cuisine.</p>
+                                                <p class="card-text"><small><b>Cook Time:</b>30 minutes</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-secondary bg-dark text-white"
+                            data-bs-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-outline-light me-3" type="button"
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
+                aria-expanded="false" aria-controls="multiCollapseExample1
+            multiCollapseExample2">
+            <svg class="me-3 bi bi-search" xmlns="http://www.w3.org/2000/svg" width="16"
+                 height="16" fill="currentColor" viewBox="0 0
+              16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397
+                1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0
+                1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5
+                0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+            Search
+        </button>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="display-2"><b>Reviews</b></h1>
+    <div class="col mt-3">
+        <div class="row-sm-4">
+            <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+            <span>Kelvin</span>
+            <p class="h3"><u>It is awesome</u></p>
+        </div>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="row-sm-4">
+        <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+        <span>Steve</span>
+        <p class="h3"><u>very detail recipe</u></p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="row-sm-4">
+        <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+        <span>Lily</span>
+        <p class="h3"><u>not really good</u></p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="row-sm-4">
+        <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+        <span>Jessica</span>
+        <p class="h3"><u>nice recipe for Argentina</u></p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="row-sm-4">
+        <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+        <span>Hello Kitty</span>
+        <p class="h3"><u>the taste is bad</u></p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="row-sm-4">
+        <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+        <span>Michael</span>
+        <p class="h3"><u>french recipe is the best in the world</u></p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="row-sm-4">
+        <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+        <span>Anonymous</span>
+        <p class="h3"><u>can be better</u></p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+
+    </div>
+    <button class="btn btn-dark text-white" data-bs-toggle="collapse" data-bs-target="#demo">Show More</button>
+    <div id="demo" class="collapse">
+
+        <div class="row-sm-4">
+            <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+            <span>Hugo</span>
+            <p class="h3"><u>made it and really good</u></p>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        </div>
+        <div class="row-sm-4">
+            <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+            <span>Unknown</span>
+            <p class="h3"><u>not bad</u></p>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+
+        </div>
+
+
+        <div class="row-sm-4">
+            <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+            <span>George</span>
+            <p class="h3"><u>too much meat</u></p>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        </div>
+
+        <div class="row-sm-4">
+            <img class="img-fluid" src="default._CR0,0,1024,1024_SX48_.jpg" alt="New York">
+            <span>Aron</span>
+            <p class="h3"><u>rubbish , don't try</u></p>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        </div>
+
+    </div>
+
+
+    <p class="h3" id="write your review">Write your review:</p>
+    <p class="h4" id="your rating">Your rating:</p>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+
+
+    <form action="/action_page.php">
+        <div class="mb-3 mt-3">
+            <label class="form-label">Your Name:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your name" name="email">
+        </div>
+
+        <div class="mb-3">
+            <label for="comment">Review:</label>
+            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+            <div class="form-check mb-3">
+
+            </div>
+            <button type="submit" class="btn btn-dark" onclick="reviewSubmitted()"><a href="../Favorites/recipe.html"
+                                                                                      class="bg-dark text-white">Submit</a>
+            </button>
+        </div>
+    </form>
+</div>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
