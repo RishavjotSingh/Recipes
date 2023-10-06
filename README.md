@@ -19,3 +19,7 @@
 ## Meal Planner Page
 
 <img width="1440" alt="Screenshot 2023-10-06 at 6 53 09 PM" src="https://github.com/RishavjotSingh/Recipes/assets/114448460/28fa7a77-6842-425f-8942-47e93e4cb4f8">
+
+# How to Run:
+
+Clone the repository or manually download all the files. Then run the
