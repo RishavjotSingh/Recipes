@@ -22,4 +22,4 @@
 
 # How to Run:
 
-Clone the repository or manually download all the files. Then run the
+Clone the repository or manually download all the files. Start running with the ```index.html``` page and then you will be able to navigate through all the pages of the website.
